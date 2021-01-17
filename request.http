@@ -1,0 +1,4 @@
+DELETE http://book.loc/books/26?_token=HuOe8UbylzA8snoEIskRaUpXX46zhv6gvumpOoxF
+
+###
+GET http://book.loc/token

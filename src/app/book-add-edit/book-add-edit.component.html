@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 *ngIf="mode == 'add'">Dodaj książkę</h1>
+  <h1 *ngIf="mode == 'edit'">Edytuj książkę</h1>
+  <form [formGroup]="form">
+    <input type="hidden" formControlName="id" class="form-control">
+
+    <table>
+      <tr>
+        <th>id</th>
+        <td>{{ form.get('id').value }}</td>
+      </tr>
+      <tr>
+        <th>Tytuł</th>
+        <td><input type="text" formControlName="title" class="form-control"></td>
+      </tr>
+      <tr>
+        <th>Autor</th>
+        <td><input type="text" formControlName="author" class="form-control"></td>
+      </tr>
+      <tr>
+        <th>Kategoria</th>
+        <td><input type="text" formControlName="category" class="form-control"></td>
+      </tr>
+      <tr>
+        <td colspan="2">Aby zapisać dane wszystkie pola muszą zawierać min. 3 znaki.</td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <button (click)="cancelEdit()" class="btn btn-info btn-sm" *ngIf="mode === 'edit'">Anuluj</button> &nbsp;
+          <button type="button" (click)="save()" [disabled]="!form.valid" class="btn btn-success btn-sm">
+            Zapisz
+          </button>
+        </th>
+      </tr>
+    </table>
+  </form>
+</div>

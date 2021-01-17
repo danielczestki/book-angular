@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="tabel table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Autor</th>
+      <th>Tytuł</th>
+      <th>Kategoria</th>
+      <th>akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.id }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.category }}</td>
+      <td>
+        <button (click)="remove(book.id)" class="btn btn-info btn-sm">usuń</button> &nbsp;
+        <button (click)="edit(book.id)" class="btn btn-info btn-sm">edytuj</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
